@@ -1,0 +1,4 @@
+
+//this will hide environmental files and variables
+node_modules
+secret.js

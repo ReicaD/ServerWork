@@ -1,7 +1,9 @@
 //this is used to create a server
 const http = require("http");
 const fs = require("fs");
+const morgan = require("morgan")
 
+morgan('tiny');
 //by adding a constant its going to be installed request is used to reque
 const server = http.createServer((req, res) => {
   //this method will return get
@@ -20,7 +22,7 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200;
       break;
 
-      case '/about-me':
+      case '/about-mek':
       path += 'about.html';
       res.statusCode = 301;
       res.setHeader('Location', '/about')

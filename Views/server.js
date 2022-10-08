@@ -1,13 +1,24 @@
 //this is used to create a server
 const http = require("http");
 const fs = require("fs");
-const morgan = require("morgan")
-
-morgan('tiny');
+//const morgan = require("morgan")
+const _ = require("lodash")
+//
+ 
 //by adding a constant its going to be installed request is used to reque
 const server = http.createServer((req, res) => {
-  //this method will return get
-  console.log(req.url, req.method);
+//lodash 
+//this will retrive every random number btn 0,20 or any othe numbers insterted in the variable
+const num = _.random(0,200);
+console.log(num);
+const greet = _.once(()=>{
+console.log('hello')
+});
+
+greet();
+greet();
+  // //this method will return get
+  // console.log(req.url, req.method);
   //setting header content type
   res.setHeader("Content-Type", "text/html");
 //switch is used to see what url the user has visited on the site depending on the case targeted it can either bring a 404.html or views the file index or about ..html

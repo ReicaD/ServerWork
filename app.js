@@ -22,10 +22,13 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
-app.get("/about-us", (req, res) => {
-  res.redirect("/about");
-  //res.send('<p>Home page</p>');
-});
+// app.get("/about-us", (req, res) => {
+//   res.redirect("/about");
+//   //res.send('<p>Home page</p>');
+// });
+app.get('/blogs/create',(req,res)=>{
+  res.render('create')
+})
 
 //use is used for middleware functions in express 404 page
 app.use((req, res) => {

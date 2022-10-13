@@ -10,7 +10,13 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   //here __dirname gets the directory that we are in the index.html file
-  res.render("index");
+  const blogs = [
+    {tittle: 'Money Rules', snippet:'All You Need to know'},
+    {tittle: 'All regulations', snippet:'See more'},
+    {tittle: 'See tricks', snippet:'About money life'},
+    
+  ];
+  res.render("index", { tittle: "Home", blogs });
   //res.send("<p>Home page</p>");
 
   // app.get("/about", (req, res) => {
@@ -19,20 +25,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { tittle: "about" });
 });
 
 // app.get("/about-us", (req, res) => {
 //   res.redirect("/about");
 //   //res.send('<p>Home page</p>');
 // });
-app.get('/blogs/create',(req,res)=>{
-  res.render('create')
-})
+app.get("/blogs/create", (req, res) => {
+  res.render("create", { tittle: "create new Blog" });
+});
 
 //use is used for middleware functions in express 404 page
 app.use((req, res) => {
-  res.status(404).render("404");
+  res.status(404).render("404", { tittle: "404" });
 });
 
 //register view engine

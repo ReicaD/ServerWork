@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About life and Cash</title>
+    <title>About life | <%= tittle %></title>
   </head>
   <body>
     <h3>Get Rich Slowly</h3>
@@ -24,13 +24,13 @@
     </nav>
     <div class="blogs Content">
       <h2>Get Rich Slowly</h2>
-      <p>
-        Understanding and managing your finances can be challenging. But never
-        fear -- personal finance bloggers are here to save the day! At personal
-        finance blogs, you'll find the tools you need to get out of debt, save
-        up for your first home, and more. These experts offer free tips, tricks,
-        and explanations for complex financial concepts.
-      </p>
+      <% if (blogs.length > 0 ){ %> 
+        <% blogs.forEach(blog => { %>
+      <h3 class = "tittle"> <%= blog.tittle%></h3>
+      <p class= "snippet"><%=blog.snippet%></p>
+
+      <% }) %> 
+      <% } %>
     </div>
   </body>
 </html>

@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About life | <%= tittle %></title>
+    <title>About life and Cash | <%= tittle %> </title>
   </head>
   <body>
     <h3>Get Rich Slowly</h3>
 
-    <nav>
+    <%- include('../views/nav.ejs')%>
+
+    <!-- <nav>
       <div class="site-tittle">
         <a href="/"><h1>Blog For Money</h1></a>
         <p>Complex financial concepts.</p>
@@ -21,7 +23,7 @@
       </ul>
       <!-- <a href="/">Homepage</a>
       <a href="/about">About page</a> -->
-    </nav>
+    </nav> -->
     <div class="create-blog content">
       <form>
         <label for="tittle">Blog tittle:</label>

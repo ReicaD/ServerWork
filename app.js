@@ -9,7 +9,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  //here __dirname gets the directory that we are in the index.html file
+  // here __dirname gets the directory that we are in the index.html file
   const blogs = [
     {tittle: 'Money Rules', snippet:'All You Need to know'},
     {tittle: 'All regulations', snippet:'See more'},

@@ -7,9 +7,11 @@
     <title>About life | <%= tittle %></title>
   </head>
   <body>
-    <h3>Get Rich Slowly</h3>
 
-    <nav>
+    <%- include('../views/nav.ejs') %>
+    <!-- <h3>Get Rich Slowly</h3> -->
+
+    <!-- <nav>
       <div class="site-tittle">
         <a href="/"><h1>Blog For Money</h1></a>
         <p>Complex financial concepts.</p>
@@ -21,16 +23,21 @@
       </ul>
       <!-- <a href="/">Homepage</a>
       <a href="/about">About page</a> -->
-    </nav>
+    </nav> -->
     <div class="blogs Content">
       <h2>Get Rich Slowly</h2>
+      <!-- //checking out the length of the blog content in the app.js file using if statement with ejs -->
       <% if (blogs.length > 0 ){ %> 
         <% blogs.forEach(blog => { %>
       <h3 class = "tittle"> <%= blog.tittle%></h3>
       <p class= "snippet"><%=blog.snippet%></p>
 
       <% }) %> 
-      <% } %>
+      <% } else { %>
+        <P>no Blogs To display</P>
+        <% } %>
+         
+
     </div>
   </body>
 </html>

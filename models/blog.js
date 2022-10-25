@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 
 const blogSchema = new Schema(
   {
-    tittle: {
+    title: {
       type: Number,
       required: true,
     },

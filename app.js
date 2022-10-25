@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
 const User = require("./models/user");
+const { result } = require("lodash");
 
 //this helps to read the express files
 const app = express();
@@ -27,13 +28,12 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 
 //mongoose and mongo sandbox routes
-
 app.get("/add-blog", (req, res) => {
   const blog = new Blog({
-    tittle: "game of thrones",
+    title: 655,
     snippet: "serie",
     body: "Really cool",
-    actors: "Rheanarya",
+    actors: "Rheanarya2",
   });
 
   blog
@@ -56,6 +56,26 @@ app.get("/add-user", (req, res) => {
 
   user
     .save()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+//writing down the routes
+app.get("/all-blog", (req, res) => {
+  Blog.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+//finding objects by id
+app.get("/single-blog", (req, res) => {
+  Blog.findById("6356f580ab8fd7627b92b80e")
     .then((result) => {
       res.send(result);
     })

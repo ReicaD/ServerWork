@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
 const User = require("./models/user");
-const { result } = require("lodash");
+// const { result } = require("lodash");
 
 //this helps to read the express files
 const app = express();

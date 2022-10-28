@@ -46,6 +46,7 @@ app.get("/add-blog", (req, res) => {
     });
 });
 
+//adding a new user on the database
 app.get("/add-user", (req, res) => {
   const user = new User({
     Name: "QueenLatifa",
@@ -63,7 +64,7 @@ app.get("/add-user", (req, res) => {
       console.log(err);
     });
 });
-//writing down the routes
+//writing down the routes to get all the blogs
 app.get("/all-blog", (req, res) => {
   Blog.find()
     .then((result) => {
